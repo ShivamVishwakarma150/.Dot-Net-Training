@@ -100,7 +100,20 @@ Update Users set category='Manager' where USERID=1;
 Delete from users where USERID in (6,7);
 
 
+-- 100% ( DDL,DML 20% 80% DQL select)
 
+select * from users;
+
+
+select Username,fullname,category from USERS;
+
+select distinct fullname,username,category from users;
+
+
+-- Filter the data where clause
+Select * from PRODUCT_MASTER where AvialableQty=500;
+
+select ProductName from PRODUCT_MASTER where AvialableQty<2000;
 
 
 
