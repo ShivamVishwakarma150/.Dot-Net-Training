@@ -51,6 +51,29 @@ alter table PRODUCT_MASTER alter column AvialableQty BigInt not null;
 
 
 
+-- Droping a foreign key
+
+Alter table [Transaction] drop FK__TRANSACTI__Produ__31EC6D26;
+
+
+-- Data Manipulation Language
+-- INSERT- Add new Row
+-- UPDATE -- Modifying the available data
+-- DELETE -- Deletes the row(s) from the  table
+
+
+insert into PRODUCT_MASTER values('TubeLight',500);
+
+insert into PRODUCT_MASTER values('Switch',1000),('Screws',2000),('Nails',500);
+
+insert into Users(UserName,Password,FullName,IsActive) values 
+('Mathew','Mathew@111','John Mathew',1);
+
+
+-- DQL SELECT -Fetch/Retrieve/show/Display/Get
+
+select * from USERS;
+SELECT * from PRODUCT_MASTER;
 
 
 
