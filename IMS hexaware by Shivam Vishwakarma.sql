@@ -61,13 +61,24 @@ Alter table [Transaction] drop FK__TRANSACTI__Produ__31EC6D26;
 -- UPDATE -- Modifying the available data
 -- DELETE -- Deletes the row(s) from the  table
 
-
 insert into PRODUCT_MASTER values('TubeLight',500);
 
 insert into PRODUCT_MASTER values('Switch',1000),('Screws',2000),('Nails',500);
 
 insert into Users(UserName,Password,FullName,IsActive) values 
 ('Mathew','Mathew@111','John Mathew',1);
+
+insert into Users(UserName,Password,FullName,IsActive) values 
+('Shivam','Shivam@1332','Shivam Vishwakarma',1);
+
+insert into Users(UserName,Password,FullName,IsActive) values 
+('Vikash','Vikas@32','Vikas Paswan',1);
+
+insert into Users(UserName,Password,FullName,IsActive) values 
+('Prashant','Prashan@34','Prashant Bhardwaj',1);
+
+insert into Users(UserName,Password,FullName,IsActive) values 
+('Abhisek','Abhisek@123','Abhisek Mishra',1);
 
 
 -- DQL SELECT -Fetch/Retrieve/show/Display/Get
@@ -76,7 +87,17 @@ select * from USERS;
 SELECT * from PRODUCT_MASTER;
 
 
+-- Update
 
+Update Users set category='Staff' where USERID=2;
+Update Users set category='Worker' where USERID=3;
+Update Users set category='Doctor' where USERID=4;
+Update Users set category='Staff' where USERID=5;
+Update Users set category='Manager' where USERID=1;
+
+-- Delete
+
+Delete from users where USERID in (6,7);
 
 
 
