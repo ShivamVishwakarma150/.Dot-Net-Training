@@ -1,3 +1,4 @@
+-- By Shivam Vishwakarma
 CREATE TABLE USERS(
 	UserID INT primary key IDENTITY(1,1),
 	UserName varchar(50),
@@ -8,18 +9,18 @@ CREATE TABLE USERS(
 );
 
 CREATE TABLE PRODUCT_MASTER(
-Productid INT PRIMARY KEY IDENTITY(1,1),
-ProductName varchar(50),
-AvialableQty Bigint
+	Productid INT PRIMARY KEY IDENTITY(1,1),
+	ProductName varchar(50),
+	AvialableQty Bigint
 );
 
 Create Table [TRANSACTION] (
-TransactionID Int Primary key IDENTITY(1,1),
-TansactionDate Date,
-ProductID int foreign key references PRODUCT_MASTER(Productid),
-TransactionType varchar(10),
-Qty Int,
-UpdatedBy Int foreign key references USERS(USERID)
+	TransactionID Int Primary key IDENTITY(1,1),
+	TansactionDate Date,
+	ProductID int foreign key references PRODUCT_MASTER(Productid),
+	TransactionType varchar(10),
+	Qty Int,
+	UpdatedBy Int foreign key references USERS(USERID)
 );
 
 
@@ -78,7 +79,7 @@ insert into Users(UserName,Password,FullName,IsActive) values
 ('Abhisek','Abhisek@123','Abhisek Mishra',1);
 
 
-insert into [TRANSACTION] values('10-11-2012',2,'Inward',12,1),('07-04-2012',2,'Inward',15,1);
+insert into [TRANSACTION] values('10-11-2012',2,'Inward',12,1),('07-04-2012',3,'Inward',15,1);
 
 -- DQL SELECT -Fetch/Retrieve/show/Display/Get
 
@@ -122,23 +123,24 @@ Select * from PRODUCT_MASTER where AvialableQty not between 1000 and 2000;
 
 
 -- Select All the users FullName and category
-
 select fullname, category from users;
 
--- Select ProductName where the AvailableQty is less than 500.
 
+-- Select ProductName where the AvailableQty is less than 500.
 select productName from PRODUCT_MASTER where AvialableQty<500;
 
--- select Transaction details which is done by user Mathew
 
-select t.* from [TRANSACTION] as t,USERS as u where t.ProductID=u.UserID;
+-- select Transaction details which is done by user Mathew
+select * from [TRANSACTION] where UpdatedBy=1;
+
 
 -- Select the transactionDate and Transaction type from transaction table
-
 select TansactionDate,transactiontype from [TRANSACTION];
+
 
 -- Fetch only the Inward Transaction details
 select * from [TRANSACTION] where TransactionType='Inward';
+
 
 -- Fetch the product details of Nails.
 select * from PRODUCT_MASTER where ProductName='Nails';
