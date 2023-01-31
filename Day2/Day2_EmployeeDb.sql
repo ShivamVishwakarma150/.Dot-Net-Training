@@ -201,3 +201,10 @@ select * from department; -- HR -> id -> 2
 select * from manager; -- manager Name -> HR -> employee_id -> 4,19
 select * from employee;
 select first_name from employee where department_id=2 and id in(4,19) order by first_name ;
+
+
+
+-- Q Display the emloyee details whose age is > 25.
+select * from employee;
+select first_name, concat(DATEDIFF(year,date_of_birth,GETDATE()),'') as 'age' from employee;
+
