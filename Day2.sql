@@ -40,3 +40,33 @@ insert into Users(UserName,Password,FullName,IsActive) values
 alter table [transaction] add constraint transactionType check (transactionType='inward'  or transactionType='outward'); 
 
 insert into [TRANSACTION] values('07-12-2012',1,'nward',12,1);
+
+
+-- Like Operator
+select * from USERS;
+-- USer Name having second Letter as 'o'
+select * from users where userName like '_o%';
+select * from users where userName like '_a%';
+
+
+
+
+-- Functions in SQL
+
+-- Aggregate Functions
+
+--Max
+--Min
+--Sum
+--Count
+--Avg
+
+select * from PRODUCT_MASTER;
+
+
+select Max(AvialableQty) as Max_Qty from PRODUCT_MASTER;
+
+select Min(AvialableQty) as Min_Qty from PRODUCT_MASTER;
+
+select SUM(AvialableQty) as TotalCount from PRODUCT_MASTER;
+
