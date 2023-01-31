@@ -155,3 +155,49 @@ insert into  employee values(23,'VIDYA','SINGH','PERICHI@gmail.com',9842578910,'
 
 
 Insert into manager(department_id,employee_id) values (1,9),(2,19),(2,4),(3,17),(3,8),(4,15),(5,1);
+
+
+
+-- 1.	Write a query to display the id, entire street address and the first word of the street address of all entries in the location table. Give an alias to the first word as 'first_word'. Display the records sorted in ascending order based on first_word.
+
+select id,street_address,SUBSTRING(street_address,1,CHARINDEX(' ',street_address)) as 'first_name' from location order by first_name asc;
+
+-- 2.	Write a query to display the names of all states belonging to the country Canada. Display the records sorted in ascending order based on state name.
+
+select * from Countries;
+select state from location where country_id='CA';
+
+
+-- 9.	Write a query to display the names of all countries belonging to region Europe. Display the records sorted in ascending order based on country name.
+
+select * from Countries;
+select * from Region; -- Europe -> id=1
+select name from Countries where region_id=1 order by name asc;
+
+
+-- 10.	Write a query to display the id,entire street address and the last word of the street address of all entries in the location table. Give an alias to the last word as 'last_word'. Display the records sorted in ascending order based on last_word.
+
+select * from location;
+select id,street_address,Reverse(SUBSTRING(Reverse(street_address),1,CHARINDEX(' ',street_address))) as 'last_word' from location order by last_word asc;
+
+-- 11.Write a query to display the first name and salary for all employees. Format the salary to be 10 characters long, left-padded with the $ symbol. Display the records sorted in ascending order based on first name.
+
+select * from employee;
+select first_name,concat('$$$$$ ',salary) as salary from employee order by first_name asc;
+
+
+
+-- 13.	Write a query to display the first name and the last 5 characters of phone numbers of all employees. Display the records sorted in ascending order based on first name. Give an alias to the last 5 characters of phone number as phone_number.
+
+select first_name,SUBSTRING(phone_number,6,10) as 'phone_number' from employee order by first_name asc;
+
+
+
+
+
+-- 14.	Write a query to display the first name of the managers of HR department. Display the records sorted in ascending order based on manager name. 
+
+select * from department; -- HR -> id -> 2
+select * from manager; -- manager Name -> HR -> employee_id -> 4,19
+select * from employee;
+select first_name from employee where department_id=2 and id in(4,19) order by first_name ;
