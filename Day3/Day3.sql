@@ -75,6 +75,34 @@ select first_name from employee where  id in(select employee_id from manager whe
 select first_name from employee where id in(select employee_id from manager) order by first_name asc;
 
 
+-- how many employees are availabe in it department
+select * from department;
+select * from location;
+select * from employee;
+
+select count(id) as 'no_of_employees' from employee where department_id=(select id from department where name='IT'); 
+
+-- Group by
+
+select count(department_id) from employee group by department_id;
+
+
+select department_id,count(id) from employee group by department_id ;
+
+select * from location;
+
+select country_id,count(state) as 'no_of_states' from location group by country_id;
+
+
+
+-- Display dept id and each dept what is the maximum salary available
+
+select department_id,max(salary) from employee group by department_id;
+
+-- write a query to display the department id and the number of managers in the department. display the records sorted in ascending order based in department name given alias to the number of managers as.
+
+select department_id,count(employee_id) from manager group by department_id;
+
 
 
 
