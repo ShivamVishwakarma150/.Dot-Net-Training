@@ -32,12 +32,47 @@ select first_name from employee where department_id in(
 select id from department where location_id=(
 select id from location where state='new Jersey'));
 
+-- find highest salary
+select first_name from employee where salary=(select Max(salary) from employee);
+
+-- find Min Salary
+select first_name from employee where salary=(select Min(salary) from employee);
+
+
+select first_name,salary from employee where salary<(select Avg(salary) from employee);
+
+-- 2nd highest 
+select Max(salary) from employee where salary!=(select max(salary) from employee);
+
+select first_name,salary from employee where salary =(select Max(salary) from employee where salary!=(select max(salary) from employee));
+
+-- 2.	Write a query to display the names of all states belonging to the country Canada. Display the records sorted in ascending order based on state name
+select * from Countries;
+select state from location where country_id=(select id from Countries where name='canada') order by state;
 
 
 
+-- 3.	Write a query to display the first name of the managers of Accounts department. Display the records sorted in ascending order based on manager name.
+select  * from department;
+select * from employee;
+select * from manager;
+select first_name from employee where id IN(select employee_id from manager where department_id in(select id from department where name='Accounts' )) order by first_name;
 
 
+-- 9. Write a query to display the names of all countries belonging to region Europe. Display the records sorted in ascending order based on country name.
 
+
+select name from Countries where region_id=(select id from Region where name='Europe')order by name asc;
+
+
+--  14.	Write a query to display the first name of the managers of HR department. Display the records sorted in ascending order based on manager name
+
+select first_name from employee where  id in(select employee_id from manager where department_id = (select id from department where name='HR')) order by first_name ;
+
+
+-- 15.	Write a query to display the first name of all employees who are managers. Display the records sorted in ascending order based on first name.
+
+select first_name from employee where id in(select employee_id from manager) order by first_name asc;
 
 
 
