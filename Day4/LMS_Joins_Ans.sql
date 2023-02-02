@@ -31,7 +31,7 @@ LMS_MEMBERS as m on m.MEMBER_ID=bi.MEMBER_ID join LMS_SUPPLIERS_DETAILS as sd on
 
 
 
--- 8.	Write a query to display the book title and the difference fine amount paid for the book in library.
+-- 8.	Write a query to display the book title and the different fine amount paid for the book in library.
 
 select * from LMS_FINE_DETAILS;
 select bd.book_title,fi.fine_amount from LMS_BOOK_DETAILS as bd join LMS_BOOK_ISSUE as bi on bd.BOOK_CODE=bi.BOOK_CODE join LMS_FINE_DETAILS as fi on bi.FINE_RANGE=fi.FINE_RANGE;
