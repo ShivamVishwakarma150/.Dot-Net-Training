@@ -59,6 +59,24 @@ select * from vw_Book_Details where SUPPLIER_NAME like 'S%';
 
 
 -- Triggers
+
+GO
+Create trigger trg_InsertFine
+on lms_fine_details
+FOR insert As
+BEGIN
+print 'A New Row added '
+END
+
+GO
+Create trigger trg_UpdateFine
+on lms_fine_details
+FOR update As
+BEGIN
+print 'A  Row updated in Fine Details table '
+END
+
+
 GO
 
 create trigger trg_DeleteFine
@@ -71,3 +89,5 @@ END
 
 Delete from LMS_FINE_DETAILS where FINE_RANGE='R11';
 
+Disable trigger trg_DeleteFine on lms_fine_details;
+Enable trigger trg_DeleteFine on lms_fine_details;
