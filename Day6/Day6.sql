@@ -78,7 +78,6 @@ END
 
 
 GO
-
 create trigger trg_DeleteFine
 on LMS_FINE_DETAILS
 for delete As
