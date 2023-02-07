@@ -154,7 +154,7 @@ class Person
 {
     //private Field
     private int _age;
-    
+
     //property (set + get)
     public int Age
     {
@@ -171,3 +171,35 @@ class Person
         }
     }
 }
+
+
+Principles of Object Oriented Programming
+==========================================
+
+Principles of OOP
+----------------
+
+• OOP following the following principles.
+    1) Encapsulation
+    2) Inheritance
+    3) Abstraction
+    4) Polymorphism
+
+
+1) Encapsulation:
+    • Encapsulation is a concept of combining Fields and methods as a single unit called “object”.
+    • This is implemented by creating classes with Fields and methods.
+    • Fields are variables that stores the data; Methods are functions that manipulates the data.
+
+2) Inheritance:
+    • Inheritance is a concept of creating “parent-child” relationship among two or more classes.
+    • As a result of inheritance, all the members of parent class are accessible in child class.
+
+3) Abstraction:
+    • Abstraction is a concept of hiding implementation details (internal logic) and providing only necessary details to other classes.
+    • This is implemented by creating private Fields and public methods.
+
+4) Polymorphism:
+    • Polymorphism means "decision making".
+    • Polymorphism means “the ability of a statement that calls different methods at different situations”.
+
