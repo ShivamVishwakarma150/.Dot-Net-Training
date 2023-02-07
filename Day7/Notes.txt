@@ -1,0 +1,173 @@
+Constructors
+------------
+
+• Constructors are special methods of the class, which initializes the Fields and perform any initialization process, which will be called automatically when an object is created for the class.
+
+• Constructors are used to receive a set of parameters and initialize those parameters into respective Fields.
+
+• For example, you have a class with Fields. So your constructor can receive 3 arguments and assign those arguments into Fields respectively. 
+However, if you don’t want to initialize all the Fields, you can receive less no. of arguments also. For example, you can initialize 1 or 2 Fields also.
+
+• When an object is created, the following process happens internally:
+o Memory will be allocated for the object in RAM (in Heap of RAM).
+o Default values will be initialized (based on the data type).
+o Constructor will be called automatically.
+
+Syntax of Constructor
+---------------------
+
+public Classname(datatype variable1, datatype variable2, …)
+{
+Field1 = variable1;
+Field2 = variable2;
+…
+}
+
+Types of Constructor
+---------------------
+• Parameter-less constructor: A constructor that has no arguments. It initializes Fields with some fixed values.
+
+class Sample
+{
+    //Fields
+    public int a, b;
+
+    //constructor
+    public Sample()
+    {
+        a = 10;
+        b = 20;
+    }
+}
+
+• Parameterized constructor: A constructor that has one or more arguments. It initializes Fields with argument (varied) values.
+
+class Sample
+{
+    //Fields
+    public int a, b;
+
+    //constructor
+    public Sample(int x, int y)
+    {
+        a = x;
+        b = y;
+    }
+}
+
+Default Constructor
+--------------------
+• As per the rules of c#.net, a class should have a constructor. If you don’t create a constructor in the class, .net creates an empty constructor (implicit constructor or default constructor) automatically and internally.
+
+
+
+
+"Set" and "Get" Methods
+-------------------------
+
+• “Set methods” and “get methods” are used to perform “validation” on a private Field.
+
+• You must create the Field as “private Field”, for security.
+
+Set Method
+----------
+
+• Set method receives a value as argument, checks (validates) it, and then assigns the same into the Field.
+
+• Set method protects the Field from invalid values.
+
+• Set method acts as mediator between Main method and Field.
+
+• Set method is used to perform validations and makes the program stronger and systematic.
+
+• Note: When set method is created, it is recommended to make the Field as “private”. 
+        The private members are accessible only within the same class.
+
+• Syntax of Set Method:
+
+public void SetFieldName(Datatype Argument)
+{
+Field = Argument;
+}
+
+Get Method
+-----------
+• Get method returns the value of a Field.
+
+• Get method can perform automatic calculations.
+
+• Syntax of Get Method:
+
+public Returntype GetFieldName( )
+{
+return (Field);
+}
+
+
+
+Properties
+----------
+
+• A property is a group of “set method” and “get method”, which perform validation on a private Field.
+
+• Properties are used to implement a protection layer around Field.
+
+• Properties can't store any value.
+
+• Properties are used for validations and automatic calculations. The “set method” is used to create validations;
+ and “get method” is used to create automatic calculations or return the value of a Field as it is.
+
+• Properties offer simple way to call “set method” and “get method”.
+
+• In real time, for every private Field, we create a property. That means the private Field is not accessible directly in the client code; though property it can be accessible indirectly.
+
+• The property’s set method will be called automatically when a value is assigned to a property.
+
+• The property’s set method has an implicit argument called “value” that represents the value assigned to the property.
+
+• The property’s get method will be called automatically when the client code gets the value of the property.
+
+• The property’s get method has no arguments but should return the value.
+
+• Note: While creating properties, it is recommended to create Field name start with “_” (underscore). The underscore has no meaning, but it indicates that it is Field.
+ 
+
+Syntax to create a property:
+-----------------------------
+
+public Datatype Propertyname
+{
+    set
+    {
+        Field = value;
+    }
+    get
+    {
+        return (Field);
+    }
+}
+
+Properties Example 
+------------------
+//create a class called "Person"
+class Person
+{
+    //private Field
+    private int _age;
+    
+    //property (set + get)
+    public int Age
+    {
+        set
+        {
+            if(value >= 18 && value <= 60)
+            {
+                _age = value;
+            }
+    }
+        get
+        {
+            return _age;
+        }
+    }
+}
