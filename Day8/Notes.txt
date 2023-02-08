@@ -1,0 +1,28 @@
+Polymorphism:
+--------------
+• Polymorphism means "decision making".
+• Polymorphism means “the ability of a statement that calls different methods at different situations”.
+
+Types of polymorphism:
+
+
+A. Static polymorphism (or) Compile-time polymorphism (or) Early binding:
+
+▪ Static polymorphism means method overloading.
+▪ Method overloading is a concept of creating multiple methods with same name in the same class with different types of arguments. While calling the method, the matching method will be executed, depending on the arguments that are passed.
+▪ The decision of which method is to be executed will be taken at compilation time (by c#.net compiler). That’s why it is called “Compile-time polymorphism”.
+▪ Example of static polymorphism: Method overloading
+
+
+B. Dynamic polymorphism (or) Run-time polymorphism (or) Late binding:
+
+▪ Dynamic polymorphism means method overriding.
+▪ Method overriding is a concept of creating two methods with same name and same signature; one is in parent class and other one is in child class; both methods have different code.
+▪ You will create a reference variable for the parent class (or) interface; assign the reference of child class’s object; and call the method. Then the current child class’s method will be called.
+▪ The decision of which class’s method is to be executed will be taken at run time (by .net CLR). That’s why it is called “Run-time polymorphism”.
+▪ Example of dynamic polymorphism: Reference variable of interface type.
+
+Convert.ToInt32() or int.Parse()
+---------------------------------
+
+"In brief, int.Parse and Convert ToInt32 are two methods to convert a string to an integer. The main difference between int Parse and Convert ToInt32 in C# is that passing a null value to int Parse will throw an ArgumentNullException while passing a null value to Convert ToInt32 will give zero."
