@@ -1,0 +1,12 @@
+[11:59 am] Dhivya (Guest)
+Design Patterns - Creational:  Singleton, Factory, Abstract Factory
+Design Patterns - Structural:  Adapter, Decorator, Bridge, Façade
+Design Patterns - Behavioral:  Chain of Responsibility,   Mediator, Observer
+
+
+Abstract Factory
+
+
+Done List
+---------
+Strategy
