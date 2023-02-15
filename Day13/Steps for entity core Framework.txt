@@ -13,4 +13,6 @@
 
     6.scaffold-dbcontext -Connection "Server=yourServerName;Database=YourDBname; integrated security=true" -provider "Microsoft.entityframeworkcore.Sqlserver"
 	
-	7.After successfully executing the above step check the solution explorer new class files will be created.
+	7.After successfully executing the above step check the solution explorer new class files 
+
+scaffold-dbcontext -Connection "Server=DESKTOP-VF0EORP;Database='lms_db'; integrated security=true" -provider "Microsoft.entityframeworkcore.Sqlserver" 
