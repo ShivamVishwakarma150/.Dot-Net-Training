@@ -1,0 +1,16 @@
+
+    1.Right click on the project , clcik Manage Nuget Package
+
+    2. click on Browse and in the secrh box type entityframeworkcore.sqlserver
+
+    3. In the right hand side , select the version of the package as 3.1 and click on install button
+
+    4. To Confirm the installation , double click on project name in solution explorer
+
+    	Check in .csproj file for depenedency reference
+
+    5. Now in Nuget package manager ,browse for entityframeworkcore.Tools and instal 3.1.0 version
+
+    6.scaffold-dbcontext -Connection "Server=yourServerName;Database=YourDBname; integrated security=true" -provider "Microsoft.entityframeworkcore.Sqlserver"
+	
+	7.After successfully executing the above step check the solution explorer new class files will be created.

@@ -1,0 +1,7 @@
+﻿
+<h2 style="margin-left:200px">@ViewBag.Title</h2>
+
+@foreach (var item in ViewData["Result"] as Dictionary<string,string>)
+{
+    <p>@item.Key @item.Value</p>
+}

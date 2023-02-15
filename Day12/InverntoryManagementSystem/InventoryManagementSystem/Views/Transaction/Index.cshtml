@@ -1,0 +1,8 @@
+﻿
+<h2 style="margin-left:200px">@ViewBag.Title</h2>
+
+@foreach (var item in ViewBag.Transaction)
+{
+    <p>@item.Key @item.Value</p>
+}
+
