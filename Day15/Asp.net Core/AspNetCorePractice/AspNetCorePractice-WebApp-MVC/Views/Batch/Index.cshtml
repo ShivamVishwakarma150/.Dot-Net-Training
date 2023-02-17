@@ -1,0 +1,26 @@
+﻿@model IEnumerable< AspNetCorePractice_WebApp_MVC.Models.Batch>
+
+<h1>Batch List</h1>
+
+<table class="table table-bordered w-50">
+
+    <tr>
+        <th>Batch No</th>
+        <th>Batch Name</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Course ID</th>
+        <th>Trainer ID</th>
+    </tr>
+    @foreach (Batch item in Model)
+    {
+                <tr>
+                    <td>@item.BatchNo</td>
+                    <td>@item.BatchName</td>
+                    <td>@item.StartSate</td>
+                    <td>@item.EndDate</td>
+                    <td>@item.CourseId</td>
+                    <td>@item.TrainerId</td>
+                </tr>
+    }
+</table>
