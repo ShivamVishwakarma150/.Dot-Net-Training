@@ -1,0 +1,16 @@
+﻿@model AspNetCorePractice_WebApp_MVC.Models.Trainer
+
+<div class="card">
+    <div class="card-header">
+        <h2>@Model.TrainerName</h2>
+    </div>
+    <div class="card-body">
+        <img  src="/images/trainer.png" alt="Trainer" width="100px" height="100px"/>
+        <h4>Trainer Skills : @Model.Skills</h4>
+        <h4>Trainer Experience : @Model.YearOfExperience</h4>
+        <h4>Trainer Email : @Model.Email</h4>
+    </div>
+    <div class="card-footer">
+        <a asp-controller="Trainer" asp-action="Index" class="btn btn-primary">Back To List</a>
+    </div>
+</div>
